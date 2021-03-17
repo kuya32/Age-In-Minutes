@@ -48,7 +48,7 @@
             app:layout_constraintTop_toBottomOf="@+id/secondsCalculateYourText" />
 
         <TextView
-            android:id="@+id/inMinutesText"
+            android:id="@+id/inSecondsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -73,7 +73,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inMinutesText" />
+            app:layout_constraintTop_toBottomOf="@+id/inSecondsText" />
 
         <TextView
             android:id="@+id/secondsSelectedDate"
@@ -103,7 +103,7 @@
             app:layout_constraintTop_toBottomOf="@+id/secondsSelectedDate" />
 
         <TextView
-            android:id="@+id/secondsInMinutesTillDate"
+            android:id="@+id/secondsInSecondsTillDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -118,15 +118,15 @@
             app:layout_constraintTop_toBottomOf="@+id/secondsSelectedDateText" />
 
         <TextView
-            android:id="@+id/secondsInMinutesTillDateText"
+            android:id="@+id/secondsInSecondsTillDateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="in seconds till date"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/secondsInMinutesTillDate"
-            app:layout_constraintStart_toStartOf="@+id/secondsInMinutesTillDate"
-            app:layout_constraintTop_toBottomOf="@+id/secondsInMinutesTillDate" />
+            app:layout_constraintEnd_toEndOf="@+id/secondsInSecondsTillDate"
+            app:layout_constraintStart_toStartOf="@+id/secondsInSecondsTillDate"
+            app:layout_constraintTop_toBottomOf="@+id/secondsInSecondsTillDate" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
