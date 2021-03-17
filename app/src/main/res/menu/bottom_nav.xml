@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/seconds"
+        android:icon="@drawable/ic_seconds"
+        android:title="Seconds" />
+
+    <item
+        android:id="@+id/minutes"
+        android:icon="@drawable/ic_minutes"
+        android:title="Minutes" />
+
+    <item
+        android:id="@+id/hours"
+        android:icon="@drawable/ic_hours"
+        android:title="Hours" />
+
+    <item
+        android:id="@+id/days"
+        android:icon="@drawable/ic_days"
+        android:title="Days" />
+
+    <item
+        android:id="@+id/weeks"
+        android:icon="@drawable/ic_weeks"
+        android:title="Weeks" />
+</menu>
