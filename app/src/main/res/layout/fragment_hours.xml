@@ -1,14 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HoursFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <include
+            android:id="@+id/hoursToolbar"
+            layout="@layout/main_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/hoursCalculateYourText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Calculate your"
+            android:textAllCaps="true"
+            android:textColor="@color/accent"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hoursToolbar" />
+
+        <TextView
+            android:id="@+id/hoursAgeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/secondaryColor"
+            android:padding="10dp"
+            android:text="Age"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/hoursCalculateYourText"
+            app:layout_constraintStart_toStartOf="@+id/hoursCalculateYourText"
+            app:layout_constraintTop_toBottomOf="@+id/hoursCalculateYourText" />
+
+        <TextView
+            android:id="@+id/inHoursText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="In hours"
+            android:textAllCaps="true"
+            android:textColor="@color/accent"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/hoursAgeText"
+            app:layout_constraintStart_toStartOf="@+id/hoursAgeText"
+            app:layout_constraintTop_toBottomOf="@+id/hoursAgeText" />
+
+        <Button
+            android:id="@+id/hoursSelectDateButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/white"
+            android:text="Select Date"
+            android:textColor="@color/gray"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inHoursText" />
+
+        <TextView
+            android:id="@+id/hoursSelectedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:hint="XX/XX/XXXX"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/hoursSelectDateButton"
+            app:layout_constraintStart_toStartOf="@+id/hoursSelectDateButton"
+            app:layout_constraintTop_toBottomOf="@+id/hoursSelectDateButton" />
+
+        <TextView
+            android:id="@+id/hoursSelectedDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Selected Date"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/hoursSelectedDate"
+            app:layout_constraintStart_toStartOf="@+id/hoursSelectedDate"
+            app:layout_constraintTop_toBottomOf="@+id/hoursSelectedDate" />
+
+        <TextView
+            android:id="@+id/hoursInHoursTillDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:hint="0"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/hoursSelectedDateText"
+            app:layout_constraintStart_toStartOf="@+id/hoursSelectedDateText"
+            app:layout_constraintTop_toBottomOf="@+id/hoursSelectedDateText" />
+
+        <TextView
+            android:id="@+id/hoursInHoursTillDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="in hours till date"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/hoursInHoursTillDate"
+            app:layout_constraintStart_toStartOf="@+id/hoursInHoursTillDate"
+            app:layout_constraintTop_toBottomOf="@+id/hoursInHoursTillDate" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

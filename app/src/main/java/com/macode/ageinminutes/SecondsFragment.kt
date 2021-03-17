@@ -1,59 +1,62 @@
 package com.macode.ageinminutes
 
+import android.app.DatePickerDialog
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.fragment_minutes.*
+import kotlinx.android.synthetic.main.fragment_seconds.*
+import java.text.SimpleDateFormat
+import java.util.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SecondsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SecondsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_seconds, container, false)
+        val view = inflater.inflate(R.layout.fragment_seconds, container, false)
+        val toolbar = view.findViewById<androidx.appcompat.widget.Toolbar>(R.id.secondsToolbar)
+        val selectDateButton = view.findViewById<Button>(R.id.secondsSelectDateButton)
+
+        (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Age in Seconds"
+
+        selectDateButton.setOnClickListener {view ->
+            clickDatePicker(view)
+        }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SecondsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SecondsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun clickDatePicker(view: View?) {
+        val myCalendar = Calendar.getInstance()
+        val year = myCalendar.get(Calendar.YEAR)
+        val month = myCalendar.get(Calendar.MONTH)
+        val day = myCalendar.get(Calendar.DAY_OF_MONTH)
+
+        val dateSetListener = DatePickerDialog(requireActivity(), R.style.DialogDate, { view, selectedYear, selectedMonth, selectedDayOfMonth ->
+            val selectedDate = "${selectedMonth + 1}/$selectedDayOfMonth/$selectedYear"
+            secondsSelectedDate.text = selectedDate
+            val sdf = SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH)
+            val theDate = sdf.parse(selectedDate)
+            val selectedDateInSeconds = theDate!!.time / 1000
+            val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
+            val currentDateToSeconds = currentDate!!.time / 1000
+            val differenceInSeconds = currentDateToSeconds - selectedDateInSeconds
+            secondsInSecondsTillDate.text = differenceInSeconds.toString()
+        }, year, month, day)
+        dateSetListener.show()
+        dateSetListener.datePicker.maxDate = Date().time - 86400000
+        dateSetListener.getButton(DatePickerDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK)
+        dateSetListener.getButton(DatePickerDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK)
     }
 }

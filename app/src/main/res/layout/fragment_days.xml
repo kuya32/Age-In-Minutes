@@ -1,14 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DaysFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <include
+            android:id="@+id/daysToolbar"
+            layout="@layout/main_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/daysCalculateYourText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Calculate your"
+            android:textAllCaps="true"
+            android:textColor="@color/accent"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/daysToolbar" />
+
+        <TextView
+            android:id="@+id/daysAgeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/secondaryColor"
+            android:padding="10dp"
+            android:text="Age"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/daysCalculateYourText"
+            app:layout_constraintStart_toStartOf="@+id/daysCalculateYourText"
+            app:layout_constraintTop_toBottomOf="@+id/daysCalculateYourText" />
+
+        <TextView
+            android:id="@+id/inDaysText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="In days"
+            android:textAllCaps="true"
+            android:textColor="@color/accent"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/daysAgeText"
+            app:layout_constraintStart_toStartOf="@+id/daysAgeText"
+            app:layout_constraintTop_toBottomOf="@+id/daysAgeText" />
+
+        <Button
+            android:id="@+id/daysSelectDateButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/white"
+            android:text="Select Date"
+            android:textColor="@color/gray"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inDaysText" />
+
+        <TextView
+            android:id="@+id/daysSelectedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:hint="XX/XX/XXXX"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/daysSelectDateButton"
+            app:layout_constraintStart_toStartOf="@+id/daysSelectDateButton"
+            app:layout_constraintTop_toBottomOf="@+id/daysSelectDateButton" />
+
+        <TextView
+            android:id="@+id/daysSelectedDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Selected Date"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/daysSelectedDate"
+            app:layout_constraintStart_toStartOf="@+id/daysSelectedDate"
+            app:layout_constraintTop_toBottomOf="@+id/daysSelectedDate" />
+
+        <TextView
+            android:id="@+id/daysInDaysTillDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:hint="0"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/daysSelectedDateText"
+            app:layout_constraintStart_toStartOf="@+id/daysSelectedDateText"
+            app:layout_constraintTop_toBottomOf="@+id/daysSelectedDateText" />
+
+        <TextView
+            android:id="@+id/daysInDaysTillDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="in days till date"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/daysInDaysTillDate"
+            app:layout_constraintStart_toStartOf="@+id/daysInDaysTillDate"
+            app:layout_constraintTop_toBottomOf="@+id/daysInDaysTillDate" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

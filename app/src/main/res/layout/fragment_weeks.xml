@@ -1,14 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WeeksFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <include
+            android:id="@+id/weeksToolbar"
+            layout="@layout/main_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/weeksCalculateYourText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Calculate your"
+            android:textAllCaps="true"
+            android:textColor="@color/accent"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weeksToolbar" />
+
+        <TextView
+            android:id="@+id/weeksAgeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/secondaryColor"
+            android:padding="10dp"
+            android:text="Age"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/weeksCalculateYourText"
+            app:layout_constraintStart_toStartOf="@+id/weeksCalculateYourText"
+            app:layout_constraintTop_toBottomOf="@+id/weeksCalculateYourText" />
+
+        <TextView
+            android:id="@+id/inWeeksText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="In weeks"
+            android:textAllCaps="true"
+            android:textColor="@color/accent"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/weeksAgeText"
+            app:layout_constraintStart_toStartOf="@+id/weeksAgeText"
+            app:layout_constraintTop_toBottomOf="@+id/weeksAgeText" />
+
+        <Button
+            android:id="@+id/weeksSelectDateButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/white"
+            android:text="Select Date"
+            android:textColor="@color/gray"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inWeeksText" />
+
+        <TextView
+            android:id="@+id/weeksSelectedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:hint="XX/XX/XXXX"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/weeksSelectDateButton"
+            app:layout_constraintStart_toStartOf="@+id/weeksSelectDateButton"
+            app:layout_constraintTop_toBottomOf="@+id/weeksSelectDateButton" />
+
+        <TextView
+            android:id="@+id/weeksSelectedDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Selected Date"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/weeksSelectedDate"
+            app:layout_constraintStart_toStartOf="@+id/weeksSelectedDate"
+            app:layout_constraintTop_toBottomOf="@+id/weeksSelectedDate" />
+
+        <TextView
+            android:id="@+id/weeksInWeeksTillDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:hint="0"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/weeksSelectedDateText"
+            app:layout_constraintStart_toStartOf="@+id/weeksSelectedDateText"
+            app:layout_constraintTop_toBottomOf="@+id/weeksSelectedDateText" />
+
+        <TextView
+            android:id="@+id/weeksInWeeksTillDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="in weeks till date"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/weeksInWeeksTillDate"
+            app:layout_constraintStart_toStartOf="@+id/weeksInWeeksTillDate"
+            app:layout_constraintTop_toBottomOf="@+id/weeksInWeeksTillDate" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
