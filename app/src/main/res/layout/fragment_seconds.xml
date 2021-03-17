@@ -1,14 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <include
+            android:id="@+id/secondsToolbar"
+            layout="@layout/main_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/secondsCalculateYourText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Calculate your"
+            android:textAllCaps="true"
+            android:textColor="@color/accent"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondsToolbar" />
+
+        <TextView
+            android:id="@+id/secondsAgeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/secondaryColor"
+            android:padding="10dp"
+            android:text="Age"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/secondsCalculateYourText"
+            app:layout_constraintStart_toStartOf="@+id/secondsCalculateYourText"
+            app:layout_constraintTop_toBottomOf="@+id/secondsCalculateYourText" />
+
+        <TextView
+            android:id="@+id/inMinutesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="In seconds"
+            android:textAllCaps="true"
+            android:textColor="@color/accent"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/secondsAgeText"
+            app:layout_constraintStart_toStartOf="@+id/secondsAgeText"
+            app:layout_constraintTop_toBottomOf="@+id/secondsAgeText" />
+
+        <Button
+            android:id="@+id/secondsSelectDateButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/white"
+            android:text="Select Date"
+            android:textColor="@color/gray"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inMinutesText" />
+
+        <TextView
+            android:id="@+id/secondsSelectedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:hint="XX/XX/XXXX"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/secondsSelectDateButton"
+            app:layout_constraintStart_toStartOf="@+id/secondsSelectDateButton"
+            app:layout_constraintTop_toBottomOf="@+id/secondsSelectDateButton" />
+
+        <TextView
+            android:id="@+id/secondsSelectedDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Selected Date"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/secondsSelectedDate"
+            app:layout_constraintStart_toStartOf="@+id/secondsSelectedDate"
+            app:layout_constraintTop_toBottomOf="@+id/secondsSelectedDate" />
+
+        <TextView
+            android:id="@+id/secondsInMinutesTillDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:hint="0"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/secondsSelectedDateText"
+            app:layout_constraintStart_toStartOf="@+id/secondsSelectedDateText"
+            app:layout_constraintTop_toBottomOf="@+id/secondsSelectedDateText" />
+
+        <TextView
+            android:id="@+id/secondsInMinutesTillDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="in seconds till date"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/secondsInMinutesTillDate"
+            app:layout_constraintStart_toStartOf="@+id/secondsInMinutesTillDate"
+            app:layout_constraintTop_toBottomOf="@+id/secondsInMinutesTillDate" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
