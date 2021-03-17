@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    tools:context=".MinutesFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/minutesToolbar"
+            layout="@layout/main_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/minutesCalculateYourText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Calculate your"
+            android:textAllCaps="true"
+            android:textColor="@color/accent"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/minutesToolbar" />
+
+        <TextView
+            android:id="@+id/minutesAgeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/secondaryColor"
+            android:padding="10dp"
+            android:text="Age"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/minutesCalculateYourText"
+            app:layout_constraintStart_toStartOf="@+id/minutesCalculateYourText"
+            app:layout_constraintTop_toBottomOf="@+id/minutesCalculateYourText" />
+
+        <TextView
+            android:id="@+id/inMinutesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="In minutes"
+            android:textAllCaps="true"
+            android:textColor="@color/accent"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/minutesAgeText"
+            app:layout_constraintStart_toStartOf="@+id/minutesAgeText"
+            app:layout_constraintTop_toBottomOf="@+id/minutesAgeText" />
+
+        <Button
+            android:id="@+id/minutesSelectDateButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/white"
+            android:text="Select Date"
+            android:textColor="@color/gray"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inMinutesText" />
+
+        <TextView
+            android:id="@+id/minutesSelectedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:hint="XX/XX/XXXX"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/minutesSelectDateButton"
+            app:layout_constraintStart_toStartOf="@+id/minutesSelectDateButton"
+            app:layout_constraintTop_toBottomOf="@+id/minutesSelectDateButton" />
+
+        <TextView
+            android:id="@+id/minutesSelectedDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Selected Date"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/minutesSelectedDate"
+            app:layout_constraintStart_toStartOf="@+id/minutesSelectedDate"
+            app:layout_constraintTop_toBottomOf="@+id/minutesSelectedDate" />
+
+        <TextView
+            android:id="@+id/minutesInMinutesTillDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:hint="0"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/accent"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/minutesSelectedDateText"
+            app:layout_constraintStart_toStartOf="@+id/minutesSelectedDateText"
+            app:layout_constraintTop_toBottomOf="@+id/minutesSelectedDateText" />
+
+        <TextView
+            android:id="@+id/minutesInMinutesTillDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="in minutes till date"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/minutesInMinutesTillDate"
+            app:layout_constraintStart_toStartOf="@+id/minutesInMinutesTillDate"
+            app:layout_constraintTop_toBottomOf="@+id/minutesInMinutesTillDate" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
